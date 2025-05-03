@@ -7,7 +7,6 @@ url: "https://learn.banano.trade" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-theme: minima
 remote_theme: jekyll/minima@1e8a445
 plugins:
   - jekyll-feed
