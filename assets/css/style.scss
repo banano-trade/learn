@@ -1,0 +1,89 @@
+---
+---
+@import
+  "minima/skins/{{ site.minima.skin | default: 'dark' }}",
+  "minima/initialize";
+
+// Custom styles can be added below this line
+
+// Styles for Banano-specific elements
+.banano-accent {
+  color: #FBDD11; // Banano yellow
+}
+
+// Styles for the account generator form
+.form64 {
+  width: 100%;
+  font-family: monospace;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: white;
+}
+
+.form8 {
+  width: 80px;
+  font-family: monospace;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: white;
+}
+
+.inputerrorborder {
+  border: 2px solid #ff5555;
+}
+
+.buttona {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 8px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.buttonblue {
+  background-color: #0070f3;
+  color: white;
+  &:hover {
+    background-color: #0060d3;
+  }
+}
+
+.buttonred {
+  background-color: #ff3333;
+  color: white;
+  &:hover {
+    background-color: #e62222;
+  }
+}
+
+// Copy button styles
+.copy-button {
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  &:hover {
+    background-color: #555;
+  }
+}
+
+// Tool container styles
+.tool-container {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

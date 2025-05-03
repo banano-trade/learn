@@ -1,0 +1,41 @@
+title: Learn Banano
+email: mail@nano.trade
+description: >-
+  A comprehensive tutorial site for Banano cryptocurrency.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://learn.banano.trade" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima
+remote_theme: jekyll/minima@1e8a445
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y"
+  social_links:
+    - title: Banano GitHub
+      icon: github
+      url: "https://github.com/BananoCoin"
+    - title: Banano Reddit
+      icon: reddit
+      url: "https://reddit.com/r/banano"
+    - title: Banano Discord
+      icon: discord
+      url: "https://chat.banano.cc"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git/
+  - .github/
+  - script/
+  - LICENSE
+  - README.md

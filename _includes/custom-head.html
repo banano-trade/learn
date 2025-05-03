@@ -1,0 +1,25 @@
+{% comment %}
+  Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
+
+  1. Head over to https://realfavicongenerator.net/ to add your own favicons.
+  2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
+{% endcomment %}
+
+<!-- Load TweetNaCl.js for cryptographic operations -->
+<script src="https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl-fast.min.js" integrity="sha256-PsU1wASu6yJXhdjpP7M7+Z9S45m9ffwBlptWKbrqUTE=" crossorigin="anonymous"></script>
+
+<!-- Load BLAKE2b implementation for hashing -->
+<script src="https://cdn.jsdelivr.net/npm/blakejs@1.2.1/blake2b.min.js"></script>
+
+<!-- Common CSS for Banano tools -->
+<link rel="stylesheet" href="{{ "/assets/css/banano-tools.css" | relative_url }}">
+
+<!-- Global banano tools JavaScript -->
+<script src="{{ "/assets/js/banano-tools.js" | relative_url }}"></script>
+
+<!-- Load page-specific scripts specified in front matter during head parsing -->
+{%- if page.head_scripts -%}
+  {%- for script in page.head_scripts -%}
+    <script src="{{ script | relative_url }}"></script>
+  {%- endfor -%}
+{%- endif -%}
