@@ -12,7 +12,7 @@ category: tools
     
     <label for="fieldseed" style="font-weight:bold;">Seed:</label>
     <div class="input-with-copy">
-      <input type="text" id="fieldseed" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64 copy"/>
+      <input type="text" id="fieldseed" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64"/>
       <button type="button" class="copy-button" onclick="copyToClipboard('fieldseed')">Copy</button>
     </div>
     <br/>
@@ -23,21 +23,21 @@ category: tools
     
     <label for="fieldprivatekey" style="font-weight:bold;">Account private key:</label>
     <div class="input-with-copy">
-      <input type="text" id="fieldprivatekey" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64 copy"/>
+      <input type="text" id="fieldprivatekey" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64"/>
       <button type="button" class="copy-button" onclick="copyToClipboard('fieldprivatekey')">Copy</button>
     </div>
     <br/>
     
     <label for="fieldpublickey" style="font-weight:bold;">Account public key:</label>
     <div class="input-with-copy">
-      <input type="text" id="fieldpublickey" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64 copy"/>
+      <input type="text" id="fieldpublickey" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64"/>
       <button type="button" class="copy-button" onclick="copyToClipboard('fieldpublickey')">Copy</button>
     </div>
     <br/>
     
     <label for="fieldaddress" style="font-weight:bold;">Account address:</label>
     <div class="input-with-copy">
-      <input type="text" id="fieldaddress" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64 copy"/>
+      <input type="text" id="fieldaddress" onfocus="removedash(this)" oninput="sanitizeandconvert(this.value, this.id);" autocomplete="off" class="form64"/>
       <button type="button" class="copy-button" onclick="copyToClipboard('fieldaddress')">Copy</button>
     </div>
     <br/>
