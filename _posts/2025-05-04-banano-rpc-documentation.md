@@ -13,12 +13,14 @@ head_scripts:
   <p>The RPC protocol accepts JSON HTTP POST requests. The following are RPC commands along with the responses that are expected. This page includes interactive examples where you can test the RPC commands directly.</p>
   
   <div class="rpc-node-selector">
-    <label for="rpc-node-url"><strong>Select RPC Node:</strong></label>
-    <select id="rpc-node-url">
-      <option value="https://api.banano.trade/proxy">api.banano.trade/proxy</option>
-      <option value="https://public.node.jungletv.live/rpc">public.node.jungletv.live/rpc</option>
-      <option value="custom">Custom URL...</option>
-    </select>
+    <div class="selector-group">
+      <label for="rpc-node-url"><strong>Select RPC Node:</strong></label>
+      <select id="rpc-node-url" class="node-select">
+        <option value="https://api.banano.trade/proxy">api.banano.trade/proxy</option>
+        <option value="https://public.node.jungletv.live/rpc">public.node.jungletv.live/rpc</option>
+        <option value="custom">Custom URL...</option>
+      </select>
+    </div>
     <div id="custom-url-container" style="display:none; margin-top: 10px;">
       <input type="text" id="custom-rpc-url" placeholder="Enter custom RPC URL" class="form-input">
       <button id="custom-url-save" class="buttona buttonblue">Save</button>
@@ -32,7 +34,6 @@ This page is split into the following sections:
 |---------|---------|
 | **Node RPCs** | For interacting with the node and ledger. |
 | **Wallet RPCs** | For interacting with the built-in wallet. **NOTE**: This wallet is only recommended for development and testing. |
-| **Unit Conversion RPCs** | For converting different units to and from raw. |
 
 ## Node RPCs
 
@@ -328,7 +329,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
 ```json
 {
   "action": "accounts_balances",
-  "accounts": ["ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo", "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs"]
+  "accounts": ["ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo", "ban_1waxp1c6c3jnonceb7io7xrmqwuc8ab3fh3wfytoruze97wxkipzaadh33nx"]
 }
 ```
 
@@ -341,7 +342,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
       "pending": "2309370929000000000000000000000000",
       "receivable": "2309370929000000000000000000000000"
     },
-    "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs": {
+    "ban_1waxp1c6c3jnonceb7io7xrmqwuc8ab3fh3wfytoruze97wxkipzaadh33nx": {
       "balance": "10000000",
       "pending": "0",
       "receivable": "0"
@@ -354,7 +355,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="accounts_balances_accounts">Accounts (comma separated):</label>
-      <input type="text" id="accounts_balances_accounts" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo, ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs" class="form-input">
+      <input type="text" id="accounts_balances_accounts" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo, ban_1waxp1c6c3jnonceb7io7xrmqwuc8ab3fh3wfytoruze97wxkipzaadh33nx" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -372,7 +373,7 @@ Returns a list of pairs of account and block hash representing the head block fo
 ```json
 {
   "action": "accounts_frontiers",
-  "accounts": ["ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo", "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs"]
+  "accounts": ["ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo", "ban_1waxp1c6c3jnonceb7io7xrmqwuc8ab3fh3wfytoruze97wxkipzaadh33nx"]
 }
 ```
 
@@ -381,7 +382,7 @@ Returns a list of pairs of account and block hash representing the head block fo
 {
   "frontiers": {
     "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo": "791AF413173EEE674A6FCF633B5DFC0F3C33F397F0DA08E987D9E0741D40D81A",
-    "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs": "6A32E2F2E2A14BA6815D52D0F523C2302F8BC3E34196E52E33CB9E86172D5E26"
+    "ban_1waxp1c6c3jnonceb7io7xrmqwuc8ab3fh3wfytoruze97wxkipzaadh33nx": "6A32E2F2E2A14BA6815D52D0F523C2302F8BC3E34196E52E33CB9E86172D5E26"
   }
 }
 ```
@@ -390,7 +391,7 @@ Returns a list of pairs of account and block hash representing the head block fo
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="accounts_frontiers_accounts">Accounts (comma separated):</label>
-      <input type="text" id="accounts_frontiers_accounts" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo, ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs" class="form-input">
+      <input type="text" id="accounts_frontiers_accounts" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo, ban_1waxp1c6c3jnonceb7io7xrmqwuc8ab3fh3wfytoruze97wxkipzaadh33nx" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -465,7 +466,7 @@ Retrieves information about blocks in **hashes**
 ```json
 {
   "action": "blocks_info",
-  "hashes": ["4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5"]
+  "hashes": ["4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5", "1DC3395B4CDCA9980851386E34B2081E2886D77E85ABA0A02A92C962080B411B"]
 }
 ```
 
@@ -492,6 +493,26 @@ Retrieves information about blocks in **hashes**
         "work": "8a142e07a10996d5"
       },
       "subtype": "send"
+    },
+    "1DC3395B4CDCA9980851386E34B2081E2886D77E85ABA0A02A92C962080B411B": {
+      "block_account": "ban_3kxxs46k7x581icfxfaxmdsg1gmzonj6m7cxgjip6oapte6naek5z1mpptmx",
+      "amount": "1000000000000000000000000000000",
+      "balance": "1203000000000000000000000000000000",
+      "height": "21",
+      "local_timestamp": "1612245620",
+      "confirmed": "true",
+      "contents": {
+        "type": "state",
+        "account": "ban_3kxxs46k7x581icfxfaxmdsg1gmzonj6m7cxgjip6oapte6naek5z1mpptmx",
+        "previous": "B73B7CBA2DCA6EB53DFB7F10D0726E2C6BB5C34989G70C475AD8AF4026D2E09",
+        "representative": "ban_1fomoz167m7o38gw4rzt7hz67oq6itejpt4yocrfywujbpatd711cjew8gjj",
+        "balance": "1203000000000000000000000000000000",
+        "link": "8C4D14A88B89F866A26EA97F324A641B86AB8AAD606B9B143A54592B201BFC2C",
+        "link_as_account": "ban_31dhbgirwzd3ce7atkfqzjq8rkft18d389xkeus3zagwdf3fju8zmk59tdgt",
+        "signature": "E6673D4A8D3D53FCD2DCE63F0AB9F0A68BC257CA0B343DADD6C8775456AA982ABB1644E679E2A988F8C25C95D4538F15B45D7C584C818A25A7C85B07C0A8503",
+        "work": "ff07d8f0e949e19a"
+      },
+      "subtype": "send"
     }
   }
 }
@@ -501,7 +522,7 @@ Retrieves information about blocks in **hashes**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="blocks_info_hashes">Block Hashes (comma separated):</label>
-      <input type="text" id="blocks_info_hashes" value="4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5" class="form-input">
+      <input type="text" id="blocks_info_hashes" value="4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5, 1DC3395B4CDCA9980851386E34B2081E2886D77E85ABA0A02A92C962080B411B" class="form-input">
     </div>
     <div class="form-group">
       <label for="blocks_info_json_block">JSON Block?</label>
@@ -617,120 +638,39 @@ Creates a new random wallet id
   </div>
 </div>
 
-### wallet_balance_total
-
-Returns the sum of all balances of the accounts in **wallet**
-
-**Request:**
-```json
-{
-  "action": "wallet_balance_total",
-  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
-}
-```
-
-**Response:**
-```json
-{
-  "balance": "10000",
-  "pending": "0",
-  "receivable": "0"
-}
-```
-
-<div class="rpc-tester" data-action="wallet_balance_total">
-  <div class="rpc-request-builder">
-    <div class="form-group">
-      <label for="wallet_balance_total_wallet">Wallet ID:</label>
-      <input type="text" id="wallet_balance_total_wallet" placeholder="000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F" class="form-input">
-    </div>
-    <button class="buttona buttonblue send-request">Send Request</button>
-  </div>
-  <div class="rpc-results" style="display:none;">
-    <h4>Response:</h4>
-    <pre class="response-area"></pre>
-  </div>
-</div>
-
-## Unit Conversion RPCs
-
-### ban_to_raw
-
-Multiplies an amount by the BANANO RAW ratio
-
-**Request:**
-```json
-{
-  "action": "ban_to_raw",
-  "amount": "1"
-}
-```
-
-**Response:**
-```json
-{
-  "amount": "100000000000000000000000000000"
-}
-```
-
-<div class="rpc-tester" data-action="ban_to_raw">
-  <div class="rpc-request-builder">
-    <div class="form-group">
-      <label for="ban_to_raw_amount">Amount (BAN):</label>
-      <input type="text" id="ban_to_raw_amount" value="1" class="form-input">
-    </div>
-    <button class="buttona buttonblue send-request">Send Request</button>
-  </div>
-  <div class="rpc-results" style="display:none;">
-    <h4>Response:</h4>
-    <pre class="response-area"></pre>
-  </div>
-</div>
-
-### raw_to_ban
-
-Divides an amount by the BANANO RAW ratio
-
-**Request:**
-```json
-{
-  "action": "raw_to_ban",
-  "amount": "100000000000000000000000000000"
-}
-```
-
-**Response:**
-```json
-{
-  "amount": "1"
-}
-```
-
-<div class="rpc-tester" data-action="raw_to_ban">
-  <div class="rpc-request-builder">
-    <div class="form-group">
-      <label for="raw_to_ban_amount">Amount (RAW):</label>
-      <input type="text" id="raw_to_ban_amount" value="100000000000000000000000000000" class="form-input">
-    </div>
-    <button class="buttona buttonblue send-request">Send Request</button>
-  </div>
-  <div class="rpc-results" style="display:none;">
-    <h4>Response:</h4>
-    <pre class="response-area"></pre>
-  </div>
-</div>
-
 <style>
 .node-selector-container {
   background-color: #2A2A2E;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .rpc-node-selector {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.selector-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.node-select {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #3A3A3E;
+  color: white;
+  border: 1px solid #555;
+  font-size: 16px;
+  min-width: 250px;
 }
 
 .rpc-tester {
@@ -738,6 +678,7 @@ Divides an amount by the BANANO RAW ratio
   border-radius: 8px;
   padding: 15px;
   margin: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -770,5 +711,28 @@ Divides an amount by the BANANO RAW ratio
   color: #ff5555;
   font-weight: bold;
   margin-top: 5px;
+}
+
+.buttona {
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.buttonblue {
+  background-color: #4D7EA8;
+  color: white;
+}
+
+.buttonblue:hover {
+  background-color: #3A6A8E;
+}
+
+.buttonblue:disabled {
+  background-color: #355570;
+  cursor: not-allowed;
 }
 </style>

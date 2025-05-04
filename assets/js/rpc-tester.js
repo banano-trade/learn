@@ -4,6 +4,17 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Add tooltip information to RPC selector
+  const rpcSelectorLabel = document.querySelector(".rpc-node-selector label");
+  if (rpcSelectorLabel) {
+    const tooltipSpan = document.createElement("span");
+    tooltipSpan.className = "tooltip-icon";
+    tooltipSpan.innerHTML = " ℹ️";
+    tooltipSpan.title =
+      "Select a Banano RPC node to connect to. Some nodes may have restricted API access.";
+    rpcSelectorLabel.appendChild(tooltipSpan);
+  }
+
   // Handle custom URL selector
   const rpcNodeSelector = document.getElementById("rpc-node-url");
   const customUrlContainer = document.getElementById("custom-url-container");
