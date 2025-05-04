@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
           responseArea.textContent = JSON.stringify(response, null, 2);
           resultsContainer.style.display = "block";
         } catch (error) {
-          responseArea.textContent = `Error: ${error.message}`;
+          responseArea.textContent = error.message;
           resultsContainer.style.display = "block";
         } finally {
           // Reset button state
@@ -182,14 +182,32 @@ async function sendRpcRequest(url, payload) {
       body: JSON.stringify(payload),
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    // Get the response text regardless of status
+    const responseText = await response.text();
+
+    // Try to parse as JSON, catching any parsing errors
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch (e) {
+      // If it's not valid JSON, throw with the text response
+      throw new Error(`Invalid JSON response: ${responseText}`);
     }
 
-    const data = await response.json();
+    // Handle HTTP error with proper error message
+    if (!response.ok) {
+      if (data && data.error) {
+        throw new Error(`Error: ${data.error}`);
+      } else {
+        throw new Error(
+          `HTTP error ${response.status}: ${response.statusText}\n\nResponse: ${responseText}`
+        );
+      }
+    }
 
-    if (data.error) {
-      throw new Error(`RPC error: ${data.error}`);
+    // Handle RPC error
+    if (data && data.error) {
+      throw new Error(`Error: ${data.error}`);
     }
 
     return data;

@@ -48,7 +48,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
 ```json
 {
   "action": "account_balance",
-  "account": "ban_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account": "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo"
 }
 ```
 
@@ -67,11 +67,11 @@ Returns how many RAW is owned and how many have not yet been received by **accou
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_balance_account">Account:</label>
-      <input type="text" id="account_balance_account" placeholder="ban_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000" class="form-input">
+      <input type="text" id="account_balance_account" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo" class="form-input">
     </div>
     <div class="form-group">
-      <label for="account_balance_confirmed">Include only confirmed?</label>
-      <select id="account_balance_confirmed" class="form-select">
+      <label for="account_balance_include_only_confirmed">Include only confirmed?</label>
+      <select id="account_balance_include_only_confirmed" class="form-select">
         <option value="true">True</option>
         <option value="false">False</option>
       </select>
@@ -92,7 +92,7 @@ Get number of blocks for a specific **account**
 ```json
 {
   "action": "account_block_count",
-  "account": "ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+  "account": "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo"
 }
 ```
 
@@ -107,7 +107,7 @@ Get number of blocks for a specific **account**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_block_count_account">Account:</label>
-      <input type="text" id="account_block_count_account" placeholder="ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3" class="form-input">
+      <input type="text" id="account_block_count_account" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -140,7 +140,7 @@ Get account number for the **public key**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_get_key">Public Key (hex):</label>
-      <input type="text" id="account_get_key" placeholder="3068BB1CA04525BB0E416C485FE6A67FD52540227D267CC8B6E8DA958A7FA039" class="form-input">
+      <input type="text" id="account_get_key" value="3068BB1CA04525BB0E416C485FE6A67FD52540227D267CC8B6E8DA958A7FA039" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -158,7 +158,7 @@ Reports send/receive information for an **account**
 ```json
 {
   "action": "account_history",
-  "account": "ban_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkk5jhd9gt9d4u5hxfq_pwfh",
+  "account": "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo",
   "count": "10"
 }
 ```
@@ -166,7 +166,7 @@ Reports send/receive information for an **account**
 **Response:**
 ```json
 {
-  "account": "ban_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkk5jhd9gt9d4u5hxfq_pwfh",
+  "account": "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo",
   "history": [
     {
       "type": "send",
@@ -174,7 +174,7 @@ Reports send/receive information for an **account**
       "amount": "100000000000000000000000000000",
       "local_timestamp": "1611671570",
       "height": "564",
-      "hash": "4C1969CA6D313C8D3129EC3761120B8CA9A3B327BC4D08FC8E976C5F6954C590"
+      "hash": "4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5"
     }
   ],
   "previous": "8D3AB98B301224253750D448B4BD997132400CEDD0A8432F775724F2D9821C72"
@@ -185,7 +185,7 @@ Reports send/receive information for an **account**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_history_account">Account:</label>
-      <input type="text" id="account_history_account" placeholder="ban_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkk5jhd9gt9d4u5hxfq_pwfh" class="form-input">
+      <input type="text" id="account_history_account" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo" class="form-input">
     </div>
     <div class="form-group">
       <label for="account_history_count">Count:</label>
@@ -207,7 +207,7 @@ Returns frontier, open block, change representative block, balance, last modifie
 ```json
 {
   "action": "account_info",
-  "account": "ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+  "account": "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo"
 }
 ```
 
@@ -230,7 +230,7 @@ Returns frontier, open block, change representative block, balance, last modifie
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_info_account">Account:</label>
-      <input type="text" id="account_info_account" placeholder="ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3" class="form-input">
+      <input type="text" id="account_info_account" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo" class="form-input">
     </div>
     <div class="form-group">
       <label for="account_info_representative">Include representative?</label>
@@ -277,7 +277,7 @@ Get the public key for **account**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_key_account">Account:</label>
-      <input type="text" id="account_key_account" placeholder="ban_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx" class="form-input">
+      <input type="text" id="account_key_account" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -295,7 +295,7 @@ Returns the representative for **account**
 ```json
 {
   "action": "account_representative",
-  "account": "ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+  "account": "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo"
 }
 ```
 
@@ -310,7 +310,7 @@ Returns the representative for **account**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="account_representative_account">Account:</label>
-      <input type="text" id="account_representative_account" placeholder="ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3" class="form-input">
+      <input type="text" id="account_representative_account" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -328,7 +328,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
 ```json
 {
   "action": "accounts_balances",
-  "accounts": ["ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3", "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs"]
+  "accounts": ["ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo", "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs"]
 }
 ```
 
@@ -336,7 +336,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
 ```json
 {
   "balances": {
-    "ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
+    "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo": {
       "balance": "325586539664609129644855132177",
       "pending": "2309370929000000000000000000000000",
       "receivable": "2309370929000000000000000000000000"
@@ -354,7 +354,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="accounts_balances_accounts">Accounts (comma separated):</label>
-      <input type="text" id="accounts_balances_accounts" placeholder="ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3, ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs" class="form-input">
+      <input type="text" id="accounts_balances_accounts" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo, ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -372,7 +372,7 @@ Returns a list of pairs of account and block hash representing the head block fo
 ```json
 {
   "action": "accounts_frontiers",
-  "accounts": ["ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3", "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs"]
+  "accounts": ["ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo", "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs"]
 }
 ```
 
@@ -380,7 +380,7 @@ Returns a list of pairs of account and block hash representing the head block fo
 ```json
 {
   "frontiers": {
-    "ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": "791AF413173EEE674A6FCF633B5DFC0F3C33F397F0DA08E987D9E0741D40D81A",
+    "ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo": "791AF413173EEE674A6FCF633B5DFC0F3C33F397F0DA08E987D9E0741D40D81A",
     "ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs": "6A32E2F2E2A14BA6815D52D0F523C2302F8BC3E34196E52E33CB9E86172D5E26"
   }
 }
@@ -390,7 +390,7 @@ Returns a list of pairs of account and block hash representing the head block fo
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="accounts_frontiers_accounts">Accounts (comma separated):</label>
-      <input type="text" id="accounts_frontiers_accounts" placeholder="ban_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3, ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs" class="form-input">
+      <input type="text" id="accounts_frontiers_accounts" value="ban_1oaocnrcaystcdtaae6woh381wftyg4k7bespu19m5w18ze699refhyzu6bo, ban_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -408,7 +408,7 @@ Retrieves a json representation of the **block**
 ```json
 {
   "action": "block_info",
-  "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9"
+  "hash": "4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5"
 }
 ```
 
@@ -440,7 +440,7 @@ Retrieves a json representation of the **block**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="block_info_hash">Block Hash:</label>
-      <input type="text" id="block_info_hash" placeholder="87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9" class="form-input">
+      <input type="text" id="block_info_hash" value="4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5" class="form-input">
     </div>
     <div class="form-group">
       <label for="block_info_json_block">JSON Block?</label>
@@ -465,7 +465,7 @@ Retrieves information about blocks in **hashes**
 ```json
 {
   "action": "blocks_info",
-  "hashes": ["87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9"]
+  "hashes": ["4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5"]
 }
 ```
 
@@ -473,7 +473,7 @@ Retrieves information about blocks in **hashes**
 ```json
 {
   "blocks": {
-    "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9": {
+    "4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5": {
       "block_account": "ban_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkk5jhd9gt9d4u5hxfq_pwfh",
       "amount": "30000000000000000000000000000000000",
       "balance": "5606157000000000000000000000000000000",
@@ -501,7 +501,7 @@ Retrieves information about blocks in **hashes**
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="blocks_info_hashes">Block Hashes (comma separated):</label>
-      <input type="text" id="blocks_info_hashes" placeholder="87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9" class="form-input">
+      <input type="text" id="blocks_info_hashes" value="4CEB66B38A3FCF19EC817143EB291234F2D279CD1651F6DC5812E3FAB5FF84B5" class="form-input">
     </div>
     <div class="form-group">
       <label for="blocks_info_json_block">JSON Block?</label>
@@ -677,7 +677,7 @@ Multiplies an amount by the BANANO RAW ratio
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="ban_to_raw_amount">Amount (BAN):</label>
-      <input type="text" id="ban_to_raw_amount" placeholder="1" class="form-input">
+      <input type="text" id="ban_to_raw_amount" value="1" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -710,7 +710,7 @@ Divides an amount by the BANANO RAW ratio
   <div class="rpc-request-builder">
     <div class="form-group">
       <label for="raw_to_ban_amount">Amount (RAW):</label>
-      <input type="text" id="raw_to_ban_amount" placeholder="100000000000000000000000000000" class="form-input">
+      <input type="text" id="raw_to_ban_amount" value="100000000000000000000000000000" class="form-input">
     </div>
     <button class="buttona buttonblue send-request">Send Request</button>
   </div>
@@ -764,5 +764,11 @@ Divides an amount by the BANANO RAW ratio
   white-space: pre-wrap;
   max-height: 300px;
   overflow-y: auto;
+}
+
+.error-message {
+  color: #ff5555;
+  font-weight: bold;
+  margin-top: 5px;
 }
 </style>
