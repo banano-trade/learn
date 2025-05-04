@@ -180,7 +180,7 @@ window.onload = function() {
 
 <style>
 .tool-container {
-  background-color: #f8f9fa;
+  background-color: #2A2A2E;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;

@@ -16,6 +16,10 @@ $grey-color-dark: darken($grey-color, 25%);
   color: #FBDD11; // Banano yellow
 }
 
+.site-header {
+  border-top: 0px;
+}
+
 // Styles for the account generator form
 .form64 {
   width: 100%;
