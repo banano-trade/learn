@@ -608,36 +608,6 @@ Returns a list of online representative accounts that have voted recently
   </div>
 </div>
 
-## Wallet RPCs
-
-### wallet_create
-
-Creates a new random wallet id
-
-**Request:**
-```json
-{
-  "action": "wallet_create"
-}
-```
-
-**Response:**
-```json
-{
-  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
-}
-```
-
-<div class="rpc-tester" data-action="wallet_create">
-  <div class="rpc-request-builder">
-    <button class="buttona buttonblue send-request">Send Request</button>
-  </div>
-  <div class="rpc-results" style="display:none;">
-    <h4>Response:</h4>
-    <pre class="response-area"></pre>
-  </div>
-</div>
-
 <style>
 .node-selector-container {
   background-color: #2A2A2E;
