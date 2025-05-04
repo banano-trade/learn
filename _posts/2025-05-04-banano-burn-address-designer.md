@@ -60,6 +60,61 @@ category: tools
 </div>
 
 <script type="text/javascript">
+// Blake2b implementation for Banano address checksums
+function blake2b(data, key, outlen) {
+  return window.blake2b.blake2b(data, key, outlen);
+}
+
+// Base32 decode function for Banano addresses
+function decode(input) {
+  const ALPHABET = '13456789abcdefghijkmnopqrstuwxyz';
+  
+  let bytes = [];
+  let bits = 0;
+  let value = 0;
+  
+  for (let i = 0; i < input.length; i++) {
+    const char = input[i];
+    const idx = ALPHABET.indexOf(char);
+    if (idx === -1) continue;
+    
+    value = (value << 5) | idx;
+    bits += 5;
+    
+    if (bits >= 8) {
+      bits -= 8;
+      bytes.push((value >> bits) & 0xFF);
+    }
+  }
+  
+  return new Uint8Array(bytes);
+}
+
+// Base32 encode function for Banano addresses
+function encode(data) {
+  const ALPHABET = '13456789abcdefghijkmnopqrstuwxyz';
+  
+  let bits = 0;
+  let value = 0;
+  let output = '';
+  
+  for (let i = 0; i < data.length; i++) {
+    value = (value << 8) | data[i];
+    bits += 8;
+    
+    while (bits >= 5) {
+      bits -= 5;
+      output += ALPHABET[(value >> bits) & 31];
+    }
+  }
+  
+  if (bits > 0) {
+    output += ALPHABET[(value << (5 - bits)) & 31];
+  }
+  
+  return output;
+}
+
 // Function to generate a custom burn address
 function convertToBurnAddress() {
   var vanity_part = document.getElementById('fieldvanityinput').value.toLowerCase();
@@ -123,14 +178,14 @@ function convertToBurnAddress() {
   }
   
   try {
-    // Convert to public key bytes
-    const pubKeyBytes = window.banani.base32_to_uint8array(main);
+    // Convert the main part to a byte array
+    const pubKeyBytes = decode(main);
     
-    // Calculate the checksum using blake2b
-    const checksumBytes = window.banani.hash_block(pubKeyBytes, null, 5).reverse();
+    // Create the checksum
+    const checksumBytes = blake2b(pubKeyBytes, null, 5).reverse();
     
     // Encode the checksum
-    const checksum = window.banani.uint8array_to_base32(checksumBytes);
+    const checksum = encode(checksumBytes);
     
     // Assemble the final address with ban_ prefix
     const final = 'ban_' + main + checksum;
@@ -156,16 +211,29 @@ function clearFields() {
   document.getElementById('fieldpadding').value = '1';
   document.getElementById('fieldvanityinput').value = '';
   document.getElementById('fieldvanityresult').value = '';
+  // Generate default address
+  convertToBurnAddress();
 }
 
-// Initialize with default values
+// Initialize when the window loads
 window.onload = function() {
-  // Set default values
-  document.getElementById('fieldleadingnumber').value = '1';
-  document.getElementById('fieldpadding').value = '1';
-  
-  // Generate initial burn address with empty vanity part
-  convertToBurnAddress();
+  // Import Blake2b library if needed
+  if (!window.blake2b) {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/blakejs@1.2.1/blake2b.min.js';
+    script.onload = function() {
+      // Once loaded, initialize
+      document.getElementById('fieldleadingnumber').value = '1';
+      document.getElementById('fieldpadding').value = '1';
+      convertToBurnAddress();
+    };
+    document.head.appendChild(script);
+  } else {
+    // Otherwise just initialize
+    document.getElementById('fieldleadingnumber').value = '1';
+    document.getElementById('fieldpadding').value = '1';
+    convertToBurnAddress();
+  }
 };
 </script>
 
