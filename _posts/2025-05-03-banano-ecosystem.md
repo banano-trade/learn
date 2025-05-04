@@ -71,6 +71,8 @@ Banano is more than just a cryptocurrency - it's a vibrant ecosystem of projects
 
 ### Libraries and SDKs
 
+- [Banani](https://github.com/stjet/banani) - Banano library for javascript/typescript
+- [Bananopie](https://github.com/stjet/bananopie) - A python library for Banano. Not just a RPC wrapper!
 - [BananoJS](https://github.com/BananoCoin/bananojs) - JavaScript library
 - [Banano-vanity](https://github.com/BananoCoin/banano-vanity) - Generate vanity addresses
 
@@ -79,7 +81,11 @@ Banano is more than just a cryptocurrency - it's a vibrant ecosystem of projects
 ### Current Exchanges
 
 - [CoinEx](https://www.coinex.com/exchange/banano-usdt)
-- [Txbit](https://txbit.io/Trade/BANANO/USDT)
+
+### Swap from/to Banano
+
+- [banano.trade](https://banano.trade)
+- [Nanswap](https://nanswap.com)
 
 ### Price Tracking
 
