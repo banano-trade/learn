@@ -53,8 +53,7 @@ category: tools
   
   <p class="warning">Never share your seed or private key with anyone. Always keep these values secure.</p>
 </div>
-<!-- Include the banani-browser.js -->
-<script src="/assets/js/banani-browser.js"></script>
+
 <script type="text/javascript">
 // Copy to clipboard functionality
 function copyToClipboard(elementId) {

@@ -1,0 +1,100 @@
+/* 
+   Banano tools CSS - consolidated styles for Banano tools
+   This imports styles from style.scss and adds any additional needed styles
+*/
+
+/* Styles for the account generator form */
+.form64 {
+    width: 100%;
+    font-family: monospace;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+  }
+  
+  .form8 {
+    width: 80px;
+    font-family: monospace;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+  }
+  
+  .inputerrorborder {
+    border: 2px solid #ff5555;
+  }
+  
+  .buttona {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .buttonblue {
+    background-color: #0070f3;
+    color: white;
+  }
+  
+  .buttonblue:hover {
+    background-color: #0060d3;
+  }
+  
+  .buttonred {
+    background-color: #ff3333;
+    color: white;
+  }
+  
+  .buttonred:hover {
+    background-color: #e62222;
+  }
+  
+  /* Copy button styles */
+  .copy-button {
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    margin-left: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .copy-button:hover {
+    background-color: #555;
+  }
+  
+  /* Input with copy button container */
+  .input-with-copy {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Tool container styles */
+  .tool-container {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Warning text */
+  .warning {
+    color: #ff5555;
+    font-weight: bold;
+    border: 1px solid #ff5555;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
