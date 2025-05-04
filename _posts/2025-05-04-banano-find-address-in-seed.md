@@ -53,9 +53,9 @@ category: tools
 <script type="text/javascript">
 // Prefill form fields with sample data
 function sampledata() {
-  document.getElementById("fieldseeds").value = "AC723DD846B7A841FAB2690ECA331B8431EB51AECE8AFD5CD4E7D11B8286092A\nSample_seed_2:790DE606FF894FF0A7C21E43FDB7E09147DEF2554AB8E9B217AED918AEFF319EB1\nAnother one:6CCABE075043D1EAF07879B35F9E98D10D8FF6454944C1B6232C817678E0D230";
+  document.getElementById("fieldseeds").value = "AC723DD846B7A841FAB2690ECA331B8431EB51AECE8AFD5CD4E7D11B8286092A\nSample_seed_2:0DE606FF894FF0A7C21E43FDB7E09147DEF2554AB8E9B217AED918AEFF319EB1\nAnother one:6CCABE075043D1EAF07879B35F9E98D10D8FF6454944C1B6232C817678E0D230";
   document.getElementById("fieldstartindex").value = '0';
-  document.getElementById("fieldendindex").value = '420';
+  document.getElementById("fieldendindex").value = '130';
   document.getElementById("fieldaccount").value = 'ban_3sz39g7ruf3ww6m67bnc479kgicd768emxbayif91c3yyp8pxhp5qdzmwefh';
 }
 
