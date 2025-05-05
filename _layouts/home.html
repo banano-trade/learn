@@ -9,6 +9,26 @@ layout: base
 
   {{ content }}
 
+  <!-- Category navigation cards -->
+  <div class="category-cards">
+    <div class="category-card all active" data-category="all">
+      <div class="category-icon">🍌</div>
+      <div class="category-name">All</div>
+    </div>
+    
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      {% assign category_name = category | first %}
+      {% assign emoji = site.data.category_emojis[category_name] | default: '📄' %}
+      
+      <div class="category-card" data-category="{{ category_name }}">
+        <div class="category-icon">{{ emoji }}</div>
+        <div class="category-name">{{ category_name | capitalize }}</div>
+        <div class="post-count">{{ site.categories[category_name].size }}</div>
+      </div>
+    {% endfor %}
+  </div>
+
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -21,11 +41,14 @@ layout: base
     {%- endif -%}
     <ul class="post-list">
       {%- for post in posts -%}
-      <li>
+      <li class="post-item" data-categories="{% for category in post.categories %}{{ category }} {% endfor %}">
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
+          {% if post.categories %}
+          <span class="post-category">{{ post.categories | first }}</span>
+          {% endif %}
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
@@ -53,3 +76,53 @@ layout: base
   {%- endif -%}
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const categoryCards = document.querySelectorAll('.category-card');
+  const postItems = document.querySelectorAll('.post-item');
+  
+  // Add transition delay for smoother filtering
+  postItems.forEach((post, index) => {
+    post.style.transitionDelay = (index * 0.05) + 's';
+  });
+  
+  categoryCards.forEach(card => {
+    card.addEventListener('click', function() {
+      // Remove active class from all cards
+      categoryCards.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked card
+      this.classList.add('active');
+      
+      const selectedCategory = this.getAttribute('data-category');
+      
+      // Filter posts
+      postItems.forEach(post => {
+        if (selectedCategory === 'all') {
+          post.style.display = 'block';
+          setTimeout(() => {
+            post.style.opacity = '1';
+            post.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          const postCategories = post.getAttribute('data-categories');
+          if (postCategories.includes(selectedCategory)) {
+            post.style.display = 'block';
+            setTimeout(() => {
+              post.style.opacity = '1';
+              post.style.transform = 'translateY(0)';
+            }, 10);
+          } else {
+            post.style.opacity = '0';
+            post.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              post.style.display = 'none';
+            }, 300); // Match this timing with your CSS transition duration
+          }
+        }
+      });
+    });
+  });
+});
+</script>

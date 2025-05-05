@@ -244,3 +244,115 @@ table {
     margin-top: 2em;
   }
 }
+
+
+// Category card styles
+.category-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.category-card {
+  background-color: $banano-gray-dark;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 110px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $banano-yellow;
+    transition: height 0.2s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    
+    &:before {
+      height: 6px;
+    }
+  }
+  
+  &.active {
+    border-color: $banano-yellow;
+    background-color: rgba($banano-yellow, 0.1);
+    transform: translateY(-3px);
+    
+    .category-name {
+      color: $banano-yellow;
+    }
+    
+    &:before {
+      height: 6px;
+    }
+  }
+}
+
+.category-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.category-name {
+  font-weight: bold;
+  color: $banano-text;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.post-count {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba($banano-yellow, 0.8);
+  color: $banano-gray-dark;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Post category label
+.post-category {
+  display: inline-block;
+  font-size: 0.7em;
+  background-color: $banano-yellow;
+  color: $banano-gray-dark;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+// Post list animations
+.post-item {
+  transition: opacity 0.3s ease, transform 0.3s ease, display 0s linear 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// When filtering, we'll make sure transitions look smooth
+.post-list {
+  min-height: 200px; // Prevents layout shift during filtering
+}
