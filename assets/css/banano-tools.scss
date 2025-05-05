@@ -1,7 +1,7 @@
 ---
 ---
 /* 
-   Banano tools CSS - specific styles for interactive tools
+   Banano tools CSS - consolidated styles for interactive Banano tools
 */
 
 // Banano brand colors
@@ -11,8 +11,25 @@ $banano-gray: #2A2A2E;
 $banano-gray-dark: #212124;
 $banano-text: #dee2e6;
 
-/* Styles for the account generator form */
+/* Styles for form elements */
 .form64 {
+  width: 100%;
+  font-family: monospace;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: $banano-gray-dark;
+  color: $banano-text;
+  
+  &:focus {
+    border-color: $banano-yellow;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($banano-yellow, 0.2);
+  }
+}
+
+.form52 {
   width: 100%;
   font-family: monospace;
   padding: 8px;
@@ -44,19 +61,37 @@ $banano-text: #dee2e6;
   }
 }
 
+.form2 {
+  width: 40px;
+  font-family: monospace;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: $banano-gray-dark;
+  color: $banano-text;
+  
+  &:focus {
+    border-color: $banano-yellow;
+    outline: none;
+  }
+}
+
 .inputerrorborder {
   border: 2px solid #ff5555;
 }
 
+/* Button styles */
 .buttona {
   display: inline-block;
   padding: 8px 16px;
-  margin: 8px 0;
+  margin: 8px 4px 8px 0;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.2s ease;
+  border: none;
 }
 
 .buttonblue {
@@ -65,6 +100,7 @@ $banano-text: #dee2e6;
   
   &:hover {
     background-color: darken($banano-yellow, 10%);
+    color: $banano-gray-dark;
   }
 }
 
@@ -74,6 +110,7 @@ $banano-text: #dee2e6;
   
   &:hover {
     background-color: darken($banano-green, 10%);
+    color: $banano-gray-dark;
   }
 }
 
@@ -83,6 +120,7 @@ $banano-text: #dee2e6;
   
   &:hover {
     background-color: darken(#ff3333, 10%);
+    color: white;
   }
 }
 
@@ -96,6 +134,7 @@ $banano-text: #dee2e6;
   border-radius: 4px;
   cursor: pointer;
   font-size: 12px;
+  font-weight: bold;
   
   &:hover {
     background-color: darken($banano-yellow, 10%);
@@ -105,7 +144,24 @@ $banano-text: #dee2e6;
 /* Input with copy button container */
 .input-with-copy {
   display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-with-copy textarea,
+.input-with-copy input {
+  flex-grow: 1;
+}
+
+.input-with-addon {
+  display: flex;
   align-items: center;
+}
+
+.input-addon-text {
+  padding-left: 10px;
+  color: #888;
 }
 
 /* Tool container styles */
@@ -118,17 +174,17 @@ $banano-text: #dee2e6;
   border-left: 4px solid $banano-yellow;
 }
 
-/* Warning text */
+/* Message styles */
 .warning {
   background-color: rgba($banano-yellow, 0.1);
-  border: 1px solid $banano-yellow;
+  border-left: 5px solid $banano-yellow;
   color: $banano-yellow;
-  padding: 10px;
+  padding: 15px;
+  margin: 20px 0;
   border-radius: 4px;
-  margin-top: 20px;
+  font-weight: bold;
 }
 
-/* Error and success messages */
 .error-message {
   background-color: rgba(#ff5555, 0.1);
   border-left: 5px solid #ff5555;
@@ -155,6 +211,14 @@ $banano-text: #dee2e6;
   margin: 10px 0;
 }
 
+/* Button row container */
+.button-row {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* RPC tester specific styles */
 .rpc-tester {
   background-color: $banano-gray-dark;
@@ -163,6 +227,10 @@ $banano-text: #dee2e6;
   margin: 15px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-left: 3px solid $banano-yellow;
+}
+
+.form-group {
+  margin-bottom: 15px;
 }
 
 .form-input, .form-select {
@@ -237,5 +305,36 @@ $banano-text: #dee2e6;
   &:disabled {
     background-color: desaturate($banano-yellow, 50%);
     opacity: 0.7;
+  }
+}
+
+.rpc-node-selector {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.selector-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.node-select {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: darken($banano-gray-dark, 2%);
+  color: $banano-text;
+  border: 1px solid #555;
+  font-size: 16px;
+  min-width: 250px;
+  
+  &:focus {
+    border-color: $banano-yellow;
+    outline: none;
   }
 }

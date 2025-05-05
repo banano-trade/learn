@@ -18,8 +18,18 @@ $text-color: $banano-text;
 $link-base-color: $banano-yellow;
 $link-visited-color: darken($banano-yellow, 15%);
 $link-hover-color: lighten($banano-yellow, 10%);
+$brand-color: $banano-yellow;
+$border-color-01: lighten($banano-gray, 10%);
+$border-color-02: lighten($banano-gray, 15%);
+$border-color-03: lighten($banano-gray, 20%);
+$table-text-color: $banano-text;
+$table-zebra-color: lighten($banano-gray, 5%);
+$table-header-bg-color: lighten($banano-gray, 10%);
+$table-header-border: lighten($banano-gray, 21%);
+$table-border-color: lighten($banano-gray, 14%);
+$code-background-color: $banano-gray-dark;
 
-// Import the minima theme (IMPORTANT!) 
+// Import the minima theme (IMPORTANT!)
 @import
   "minima/skins/{{ site.minima.skin | default: 'dark' }}",
   "minima/initialize";
@@ -41,12 +51,32 @@ body {
   font-weight: bold;
 }
 
-.site-nav .page-link {
-  color: $banano-text;
+.site-nav {
+  background-color: $banano-gray-dark;
   
-  &:hover {
-    color: $banano-yellow;
+  .page-link {
+    color: $banano-text;
+    
+    &:hover {
+      color: $banano-yellow;
+    }
   }
+  
+  @media screen and (max-width: 600px) {
+    background-color: $banano-gray-dark;
+    border: 1px solid lighten($banano-gray, 10%);
+    
+    .menu-icon {
+      > svg path {
+        fill: $banano-yellow;
+      }
+    }
+  }
+}
+
+.site-footer {
+  border-top: 1px solid lighten($banano-gray, 10%);
+  background-color: $banano-gray-dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,6 +100,20 @@ h1, h2, h3, h4, h5, h6 {
   h3 {
     color: lighten($banano-yellow, 5%);
   }
+  
+  a {
+    color: $banano-yellow;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+      color: lighten($banano-yellow, 10%);
+    }
+    
+    &:visited {
+      color: darken($banano-yellow, 10%);
+    }
+  }
 }
 
 a,
@@ -86,4 +130,117 @@ a:visited {
 // Banano-specific element styles
 .banano-accent {
   color: $banano-yellow;
+}
+
+pre, code {
+  background-color: $banano-gray-dark;
+  border: 1px solid lighten($banano-gray, 10%);
+}
+
+blockquote {
+  color: darken($banano-text, 15%);
+  border-left: 4px solid $banano-yellow;
+  
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: lighten($banano-gray, 15%);
+  margin: 2em 0;
+}
+
+table {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid lighten($banano-gray, 15%);
+  
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($banano-gray, 5%);
+    }
+  }
+  
+  th, td {
+    padding: 10px 15px;
+  }
+  
+  th {
+    background-color: lighten($banano-gray, 10%);
+    border: 1px solid lighten($banano-gray, 15%);
+    color: $banano-yellow;
+  }
+  
+  td {
+    border: 1px solid lighten($banano-gray, 15%);
+  }
+}
+
+// Social media links
+.social-media-list {
+  a {
+    &:hover {
+      .username {
+        color: $banano-yellow;
+      }
+    }
+  }
+  
+  li + li {
+    padding-top: 5px;
+  }
+}
+
+// Pagination
+.pagination {
+  a, div {
+    padding: 8px 12px;
+    border: 1px solid lighten($banano-gray, 15%);
+    
+    &.current {
+      background-color: $banano-yellow;
+      color: $banano-gray-dark;
+    }
+    
+    &:hover {
+      background-color: lighten($banano-gray, 5%);
+      text-decoration: none;
+    }
+  }
+}
+
+// Search result highlighting
+.highlight {
+  background-color: rgba($banano-yellow, 0.1);
+  color: $banano-yellow;
+}
+
+// Custom link buttons
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: $banano-yellow;
+  color: $banano-gray-dark !important;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none !important;
+  
+  &:hover {
+    background-color: darken($banano-yellow, 10%);
+    color: $banano-gray-dark !important;
+  }
+}
+
+// Home page styling
+.home {
+  h2 {
+    border-bottom: 2px solid rgba($banano-yellow, 0.3);
+    padding-bottom: 5px;
+    margin-top: 2em;
+  }
 }
