@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started with Banano"
 date: 2025-05-03 10:00:00 +0000
-categories: tutorial
+categories: introduction
 tags: [beginner, introduction, wallet]
 ---
 

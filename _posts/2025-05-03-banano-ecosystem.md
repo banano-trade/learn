@@ -2,7 +2,7 @@
 layout: post
 title: "The Banano Ecosystem"
 date: 2025-05-03 14:00:00 +0000
-categories: overview
+categories: introduction
 tags: [ecosystem, projects, community]
 ---
 

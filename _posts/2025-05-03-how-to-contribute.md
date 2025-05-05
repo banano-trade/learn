@@ -2,7 +2,7 @@
 layout: post
 title: "How to Contribute to Learn Banano"
 date: 2025-05-03 09:00:00 +0000
-categories: meta
+categories: introduction
 tags: [contribution, github, jekyll]
 ---
 
