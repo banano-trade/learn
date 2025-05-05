@@ -1,9 +1,9 @@
 ---
 ---
-/* 
-   Banano tools CSS - consolidated styles for Banano tools
-   This imports styles from style.scss and adds any additional needed styles
-*/
+// Define variables needed by the theme
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);
 
 // Banano brand colors
 $banano-yellow: #FBDD11;
@@ -12,217 +12,78 @@ $banano-gray: #2A2A2E;
 $banano-gray-dark: #212124;
 $banano-text: #dee2e6;
 
-/* Styles for the account generator form */
-.form64 {
-  width: 100%;
-  font-family: monospace;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #555;
-  background-color: $banano-gray-dark;
+// Override theme variables 
+$background-color: $banano-gray;
+$text-color: $banano-text;
+$link-base-color: $banano-yellow;
+$link-visited-color: darken($banano-yellow, 15%);
+$link-hover-color: lighten($banano-yellow, 10%);
+
+// Import the minima theme (IMPORTANT!) 
+@import
+  "minima/skins/{{ site.minima.skin | default: 'dark' }}",
+  "minima/initialize";
+
+// Custom Banano styles
+body {
+  background-color: $banano-gray;
   color: $banano-text;
-  
-  &:focus {
-    border-color: $banano-yellow;
-    outline: none;
-  }
 }
 
-.form8 {
-  width: 80px;
-  font-family: monospace;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #555;
+.site-header {
+  border-top: 5px solid $banano-yellow;
+  border-bottom: 1px solid $banano-gray-dark;
   background-color: $banano-gray-dark;
-  color: $banano-text;
-  
-  &:focus {
-    border-color: $banano-yellow;
-    outline: none;
-  }
 }
 
-.inputerrorborder {
-  border: 2px solid #ff5555;
-}
-
-.buttona {
-  display: inline-block;
-  padding: 8px 16px;
-  margin: 8px 0;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
+.site-title, .site-title:visited {
+  color: $banano-yellow;
   font-weight: bold;
-  transition: all 0.2s ease;
 }
 
-.buttonblue {
-  background-color: $banano-yellow;
-  color: $banano-gray-dark;
+.site-nav .page-link {
+  color: $banano-text;
   
   &:hover {
-    background-color: darken($banano-yellow, 10%);
+    color: $banano-yellow;
   }
 }
 
-.buttongreen {
-  background-color: $banano-green;
-  color: $banano-gray-dark;
-  
-  &:hover {
-    background-color: darken($banano-green, 10%);
-  }
-}
-
-.buttonred {
-  background-color: #ff3333;
-  color: white;
-  
-  &:hover {
-    background-color: darken(#ff3333, 10%);
-  }
-}
-
-/* Copy button styles */
-.copy-button {
-  background-color: $banano-yellow;
-  border: none;
-  color: $banano-gray-dark;
-  padding: 4px 8px;
-  margin-left: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  
-  &:hover {
-    background-color: darken($banano-yellow, 10%);
-  }
-}
-
-/* Input with copy button container */
-.input-with-copy {
-  display: flex;
-  align-items: center;
-}
-
-/* Tool container styles */
-.tool-container {
-  background-color: $banano-gray-dark;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid $banano-yellow;
-}
-
-/* Warning text */
-.warning {
-  background-color: rgba($banano-yellow, 0.1);
-  border: 1px solid $banano-yellow;
+h1, h2, h3, h4, h5, h6 {
   color: $banano-yellow;
-  padding: 10px;
-  border-radius: 4px;
-  margin-top: 20px;
 }
 
-/* Error and success messages */
-.error-message {
-  background-color: rgba(#ff5555, 0.1);
-  border-left: 5px solid #ff5555;
-  color: #ff5555;
-  padding: 10px;
-  margin: 10px 0;
-  display: none;
-}
-
-.warning-message {
-  background-color: rgba($banano-yellow, 0.1);
-  border-left: 5px solid $banano-yellow;
+.post-title {
   color: $banano-yellow;
-  padding: 10px;
-  margin: 10px 0;
-  display: none;
 }
 
-.success-message {
-  background-color: rgba($banano-green, 0.1);
-  border-left: 5px solid $banano-green;
-  color: $banano-green;
-  padding: 10px;
-  margin: 10px 0;
+.post-meta {
+  color: darken($banano-text, 20%);
 }
 
-/* RPC tester specific styles */
-.rpc-tester {
-  background-color: $banano-gray-dark;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 15px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-left: 3px solid $banano-yellow;
-}
-
-.form-input, .form-select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  border-radius: 4px;
-  border: 1px solid #555;
-  background-color: $banano-gray-dark;
-  color: $banano-text;
-  font-family: monospace;
+.post-content {
+  h2 {
+    border-bottom: 2px solid rgba($banano-yellow, 0.3);
+    padding-bottom: 5px;
+  }
   
-  &:focus {
-    border-color: $banano-yellow;
-    outline: none;
+  h3 {
+    color: lighten($banano-yellow, 5%);
   }
 }
 
-.node-selector-container {
-  background-color: $banano-gray-dark;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-left: 4px solid $banano-yellow;
-}
-
-.response-area {
-  padding: 10px;
-  background-color: darken($banano-gray-dark, 3%);
-  border-radius: 4px;
-  border-left: 3px solid $banano-green;
-  overflow-x: auto;
-  font-family: monospace;
-  white-space: pre-wrap;
-  max-height: 300px;
-  overflow-y: auto;
-  color: $banano-text;
-}
-
-/* Form elements for tools */
-.form-textarea {
-  width: 100%;
-  height: 100px;
-  margin-bottom: 10px;
-  font-family: monospace;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #555;
-  background-color: $banano-gray-dark;
-  color: $banano-text;
+a,
+a:visited {
+  color: $banano-yellow; 
+  text-decoration: none;
   
-  &:focus {
-    border-color: $banano-yellow;
-    outline: none;
+  &:hover {
+    text-decoration: underline;
+    color: lighten($banano-yellow, 10%);
   }
 }
 
-.tooltip-icon {
-  cursor: help;
-  margin-left: 4px;
+// Banano-specific element styles
+.banano-accent {
+  color: $banano-yellow;
 }

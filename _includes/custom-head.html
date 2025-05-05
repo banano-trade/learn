@@ -3,18 +3,12 @@
   1. Head over to https://realfavicongenerator.net/ to add your own favicons.
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
-<!-- Include our custom styles from style.scss -->
+<!-- Include our custom styles -->
 <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "/assets/css/banano-tools.scss" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/banano-tools.css" | relative_url }}">
 
 <!-- Include banani-browser.js for cryptographic operations -->
 <script src="{{ "/assets/js/banani-browser.js" | relative_url }}"></script>
-
-<!-- Banano favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/images/favicon-32x32.png" | relative_url }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/images/favicon-16x16.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/images/apple-touch-icon.png" | relative_url }}">
-<link rel="shortcut icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
 
 <!-- Load page-specific scripts specified in front matter during head parsing -->
 {%- if page.head_scripts -%}
