@@ -17,7 +17,8 @@ platforms :mingw, :x64_mingw, :mswin, :jruby do
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+# Make WDM optional
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin], install_if: -> { RUBY_PLATFORM =~ /mingw|mswin/ && Gem::Version.new(RUBY_VERSION) < Gem::Version.new('3.3.0') }
 
 # Required for Ruby 3.0+
 gem "webrick", "~> 1.7"
