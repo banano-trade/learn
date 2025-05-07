@@ -344,14 +344,71 @@ table {
   vertical-align: middle;
 }
 
-// Post list animations
-.post-item {
-  transition: opacity 0.3s ease, transform 0.3s ease, display 0s linear 0.3s;
-  opacity: 1;
-  transform: translateY(0);
+/* Post Grid Layout Styles */
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-// When filtering, we'll make sure transitions look smooth
-.post-list {
-  min-height: 200px; // Prevents layout shift during filtering
+/* Post Card Styles */
+.post-item {
+  background-color: #212124; /* banano-gray-dark */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-top: 4px solid #FBDD11; /* banano-yellow */
+}
+
+.post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Make the entire card clickable */
+.post-item .card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  padding: 20px;
+}
+
+.post-item h3 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.post-item .post-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.post-item .post-category {
+  align-self: flex-start;
+  margin-top: 8px;
+  margin-left: 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .post-list {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .post-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+  }
 }

@@ -42,17 +42,14 @@ layout: base
     <ul class="post-list">
       {%- for post in posts -%}
       <li class="post-item" data-categories="{% for category in post.categories %}{{ category }} {% endfor %}">
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-          {% if post.categories %}
-          <span class="post-category">{{ post.categories | first }}</span>
-          {% endif %}
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
+        <a class="card-link" href="{{ post.url | relative_url }}">
+          <h3>
+            <span class="post-title">{{ post.title | escape }}</span>
+            {% if post.categories %}
+            <span class="post-category">{{ post.categories | first }}</span>
+            {% endif %}
+          </h3>
+        </a>
       </li>
       {%- endfor -%}
     </ul>
