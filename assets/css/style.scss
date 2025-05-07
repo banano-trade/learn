@@ -183,16 +183,15 @@ table {
 
 // Social media links
 .social-media-list {
-  a {
-    &:hover {
-      .username {
-        color: $banano-yellow;
-      }
-    }
+  li {
+    display: flex;
+    align-items: center;
   }
   
-  li + li {
-    padding-top: 5px;
+  .fa-github {
+    /* Adjust this value as needed to align with other icons */
+    position: relative;
+    top: 1px; 
   }
 }
 

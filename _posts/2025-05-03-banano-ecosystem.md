@@ -67,7 +67,7 @@ Banano is more than just a cryptocurrency - it's a vibrant ecosystem of projects
 
 ### Documentation
 
-- [Banano Wiki](https://github.com/BananoCoin/wiki/wiki) - Community wiki
+- [Banano Wiki](https://banano.fandom.com/wiki/Banano_Wiki) - Community wiki
 
 ### Libraries and SDKs
 
