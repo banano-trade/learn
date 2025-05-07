@@ -60,7 +60,7 @@ Banano is more than just a cryptocurrency - it's a vibrant ecosystem of projects
 
 ### News and Updates
 
-- [Banano Blog](https://medium.com/banano) - Official Medium publication
+- [Banano Blog](https://banano.cc/blog) - Official Medium publication
 - [The Daily Peel](https://daily-peel.com) - Community-run news site
 
 ## Development Resources
@@ -99,8 +99,7 @@ The Banano ecosystem is constantly growing and evolving. Here are some ways you 
 
 ### Contributing to Development
 
-- Check out open issues on [GitHub](https://github.com/BananoCoin)
-- Join development discussions on [Discord](https://chat.banano.cc)
+- Join development discussions on [Discord](https://chat.banano.cc) - check out #frankensteins-lab!
 - Create or improve documentation
 
 ### Community Participation

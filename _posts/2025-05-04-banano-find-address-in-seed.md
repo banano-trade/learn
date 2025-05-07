@@ -28,7 +28,7 @@ category: tools
     
     <div class="button-row">
       <a class="buttona buttongreen" id="startbutton" href="#" role="button" onclick="preparesearch(); return false;">Run search</a>
-      <a class="buttona" href="#" role="button" onclick="sampledata(); return false;">Enter sample data</a>
+      <a class="buttona buttongreen" href="#" role="button" onclick="sampledata(); return false;">Enter sample data</a>
       <a class="buttona buttonred" href="#" role="button" onclick="document.getElementById('seedSearch').reset(); return false;">Clear all fields</a>
     </div>
   </form>

@@ -95,13 +95,8 @@ $banano-text: #dee2e6;
 }
 
 .buttonblue {
-  background-color: $banano-yellow;
+  background-color: $banano-green;
   color: $banano-gray-dark;
-  
-  &:hover {
-    background-color: darken($banano-yellow, 10%);
-    color: $banano-gray-dark;
-  }
 }
 
 .buttongreen {
