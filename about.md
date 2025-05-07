@@ -14,7 +14,7 @@ Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG (D
 
 Key features of Banano:
 - **Feeless transactions**: No cost to send or receive Banano
-- **Instant transfers**: Transactions confirm in seconds
+- **Instant transfers**: Transactions confirm in [less than a second](https://ba.nanospeed.info/)
 - **Energy efficient**: Doesn't rely on mining or proof-of-work consensus
 - **Community focused**: Strong emphasis on education and accessibility
 - **Meme friendly**: Embraces fun while teaching cryptocurrency concepts
